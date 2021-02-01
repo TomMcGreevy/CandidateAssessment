@@ -1,0 +1,70 @@
+     
+<!doctype html>
+<html lang="en">
+  <head>
+    <link rel="stylesheet" href="../css/homepage.css">
+  </head>
+                    <form method="post" action = "{{url}}/genkey">
+                        <h2>Users API</h2>
+                        <fieldset>
+                            <legend>Generate API Key</legend>
+                            <br>
+                            <label for="key">API Key: </label>
+                            <input id="key" name="key" type=password {{ key|replace({'"':''}) }} size="100" maxlength="100" readonly>
+                            <br><br>
+                            <input type="submit" value="Generate Key >>>">
+                            <button type="button" onclick="copyToClipboard()">Copy</button>
+                        </fieldset>
+                    </form>
+                     <form method="post" action = "{{url}}/formsubmit">
+                        <fieldset>
+                            <legend>Interact</legend>
+                            <br>                        
+                            <label for="inputkey">API Key: </label>
+                            <input id="inputkey" name="inputkey" type="password" size="100" required="required">
+                            <br><br>
+
+                            <select name="endpoints" id="endpoint" onchange="showInputs(this.id)">
+                                <option value="select"><< Select >></option>
+                                <option value="create">Create User</option>
+                                <option value="getallusers">See all Users</option>
+                                <option value="getuser">See User</option>
+                                <option value="edituser">Edit User</option>
+                                <option value="deleteuser">Delete User</option>
+                              </select>
+                                <select name="editoptions" id="editoptions" onchange="showInputs(this.id)">
+                                <option value="firstname">First Name</option>
+                                <option value="surname">Surname</option>
+                                <option value="dob">Date of Birth</option>
+                                <option value="phone">Phone Number</option>
+                                <option value="email">Email Address</option>
+                              </select>
+
+                              <br><br>
+                              <label for="userid" id="useridlabel">User Id: </label>
+                              <input id="userid" name="userid" type="text" value="" size="100" maxlength="100" >
+                              <br><br>
+                              <label for="firstname" id="firstnamelabel">First Name: </label>
+                              <input id="firstname" name="firstname" type="text" value="" size="100" maxlength="100" >
+                              <br><br>
+                              <label for="surname" id="surnamelabel">Surname: </label>
+                              <input id="surname" name="surname" type="text" value="" size="100" maxlength="100" >
+                              <br><br>
+                              <label for="dob" id="doblabel">Date of Birth: </label>
+                              <input id="dob" name="dob" type="date" value="" size="100" maxlength="100" >
+                              <br><br>
+                              <label for="phonenumber" id="phonenumberlabel">Phone Number: </label>
+                              <input id="phonenumber" name="phone number" type="tel" value="" size="100" maxlength="100" >
+                              <br><br>
+                              <label for="email" id="emaillabel">Email Address: </label>
+                              <input id="email" name="email" type="text" value="" size="100" maxlength="100" >
+                              <input id= "formsubmit" type="submit" value="Submit">
+                        </fieldset>
+                        </form>
+    </body>
+    <footer>
+    <script src="../js/scripts.js"></script>        
+    </footer>
+   
+
+
